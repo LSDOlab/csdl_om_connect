@@ -1,2 +1,2 @@
-# csdl_om_connector
+# csdl_om_connect
 A package that interfaces models in CSDL with OpenMDAO and vice-versa

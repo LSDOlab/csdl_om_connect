@@ -1,0 +1,59 @@
+[build-system]
+requires = ['setuptools']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'csdl_om_connect'
+description = 'A package that interfaces models in CSDL with OpenMDAO and vice-versa.'
+readme = 'README.md'
+requires-python = '>=3.9'
+# license = {file = 'LICENSE.txt'}
+license = {text = 'LGPLv3+'}
+authors = [
+  {name = 'Anugrah Jo Joshy', email = 'ajoshy.ucsd@gmail.com'},
+]
+maintainers = [
+  {name = 'Anugrah Jo Joshy', email = 'ajoshy.ucsd@gmail.com'},
+]
+keywords=[  
+    'design optimization', 'optimization', 'graph-based modeling', 
+    'interface', 'openmdao', 'csdl', 'modopt', 'csdl_alpha', 'modeling',
+    'computational modeling', 'computational engineering', 'computational design',
+    'adjoint-based sensitivity analysis', 'gradient-based optimization'
+    ]
+dynamic = ["version"]
+dependencies = [
+    "csdl_alpha @ git+https://github.com/LSDOlab/csdl_alpha.git",
+    "modopt @ git+htts://github.com/LSDOlab/modopt.git",
+    "openmdao"
+]
+classifiers=[
+    'Development Status :: 4 - Beta',
+    # 'Development Status :: 5 - Production/Stable',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
+    'Operating System :: OS Independent',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Science/Research',
+    'Natural Language :: English',
+    'Topic :: Scientific/Engineering',
+    'Topic :: Scientific/Engineering :: Mathematics',
+    'Topic :: Software Development',
+    'Topic :: Software Development :: Libraries',
+]
+
+[project.urls]
+"Homepage/Repository" = "https://github.com/LSDOlab/csdl_om_connect"
+Documentation = 'https://github.com/LSDOlab/csdl_om_connect/examples'
+"Bug Tracker" = "https://github.com/LSDOlab/csdl_om_connect/issues"
+Changelog = "https://github.com/LSDOlab/csdl_om_connect/changelog.md"
+
+[tool.setuptools.dynamic]
+version = {attr = "csdl_om_connect.__version__"}
+
+[tool.setuptools]
+package-dir = {"" = "."}
