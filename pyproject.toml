@@ -24,7 +24,7 @@ keywords=[
 dynamic = ["version"]
 dependencies = [
     "csdl_alpha @ git+https://github.com/LSDOlab/csdl_alpha.git",
-    "modopt @ git+htts://github.com/LSDOlab/modopt.git",
+    "modopt @ git+https://github.com/LSDOlab/modopt.git",
     "openmdao"
 ]
 classifiers=[
