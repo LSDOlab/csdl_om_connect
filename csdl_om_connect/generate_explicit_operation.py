@@ -39,30 +39,30 @@ class OpenMDAOExplicitOperation(csdl.CustomExplicitOperation):
         A dictionary of all input metadata from the OpenMDAO model with unpromoted names as keys.
     all_output_meta : Dict[str, Dict]
         A dictionary of all output metadata from the OpenMDAO model with unpromoted names as keys.
+    all_input_names : List[str]
+        A list of all unpromoted input names from the OpenMDAO model, including those that are unavailable for the user in CSDL.
+    all_output_names : List[str]
+        A list of all unpromoted output names from the OpenMDAO model, including those that are unavailable for the user in CSDL.
     input_name_map : Dict[str, List[str]]
         A dictionary that maps promoted names to the list of all unpromoted names, for all input variables in the OpenMDAO model.
     output_name_map : Dict[str, List[str]]
         A dictionary that maps promoted names to the list of all unpromoted names, for all output variables in the OpenMDAO model.
     available_input_names : List[str]
         A list of all available input names for the user in CSDL,
-        includes promoted and unpromoted names of all independent inputs in the model
+        includes promoted and unpromoted names of all independent inputs in the model.
         These inputs can be independently assigned values through csdl.Variable objects, if exposed by the user.
     available_output_names : List[str]
         A list of all available output names for the user in CSDL,
-        includes promoted and unpromoted names of all non-independent outputs in the model
+        includes promoted and unpromoted names of all non-independent outputs in the model.
         These outputs can be accessed and used as CSDL variables, if exposed by the user.
-    all_input_names : List[str]
-        A list of all input names from the OpenMDAO model with promoted/unpromoted names.
-    all_output_names : List[str]
-        A list of all output names from the OpenMDAO model with promoted/unpromoted names.
     in_names : List[str]
-        A list of input names that are exposed by the user as CSDL variables and can be assigned values.
+        A list of input names that are exposed by the user as CSDL variables and can be assigned values from CSDL.
     out_names : List[str]
-        A list of output names that are exposed by the user as CSDL variables and can be used as regular CSDL variables.
+        A list of output names that are exposed by the user and are available in CSDL as regular CSDL variables.
     prom_in_names : List[str]
-        A list of promoted input names in the order corresponding to the ``in_names`` list to be used for compute_totals.
+        A list of promoted input names in the order corresponding to the ``in_names`` list to be used for ``compute_totals``.
     prom_out_names : List[str]
-        A list of promoted output names in the order corresponding to the ``out_names`` list to be used for compute_totals.
+        A list of promoted output names in the order corresponding to the ``out_names`` list to be used for ``compute_totals``.
     '''
 
     def __init__(self, model: Union[om.ExplicitComponent, om.Group, om.Problem], solver_print_level: int = 0):
