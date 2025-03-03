@@ -331,7 +331,7 @@ if __name__ == '__main__':
     
     # outputs = paraboloid.evaluate(inputs, ['f'])
     # outputs['f'].set_as_objective()
-    # optimized_solution = {'x' : np.array([ 6.66665446, -7.33332915]), 'objective': 1.0, 'nfev': 7, 'njev': 7, 'nit':7}
+    # optimized_solution = {'x' : np.array([ 6.66665446, -7.33332915]), 'objective': -27.33333333321794, 'nfev': 7, 'njev': 7, 'nit':7}
 
     # 2.1 OpenMDAOExplicitOperation from an ExplicitComponent object
     # quartic = OpenMDAOExplicitOperation(QuarticComp())
@@ -346,8 +346,7 @@ if __name__ == '__main__':
     outputs['quartic.objective'].set_as_objective()
     outputs['quartic.constraint_1'].set_as_constraint(equals=1.0)
     outputs['quartic.constraint_2'].set_as_constraint(lower =1.0)
-    optimized_solution = {'x' : np.array([1.00000000e+00, 1.11022302e-16]), 'objective': -27.33333333321794, 'nfev': 2, 'njev': 2, 'nit':2}
-
+    optimized_solution = {'x' : np.array([1.00000000e+00, 1.11022302e-16]), 'objective': 1.0, 'nfev': 2, 'njev': 2, 'nit':2}
 
     recorder.stop()
 
@@ -360,8 +359,8 @@ if __name__ == '__main__':
     optimizer.solve()
     optimizer.print_results(all=True)
 
-    np.allclose(optimizer.results['x'], optimized_solution['x'], atol=1e-6)
-    np.allclose(optimizer.results['fun'], optimized_solution['objective'], atol=1e-6)
+    assert np.allclose(optimizer.results['x'], optimized_solution['x'], atol=1e-6)
+    assert np.allclose(optimizer.results['fun'], optimized_solution['objective'], atol=1e-6)
     assert optimizer.results['nfev'] == optimized_solution['nfev']
     assert optimizer.results['njev'] == optimized_solution['njev']
     assert optimizer.results['nit'] == optimized_solution['nit']
