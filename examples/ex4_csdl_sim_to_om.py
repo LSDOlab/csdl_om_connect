@@ -19,7 +19,7 @@ recorder.start()
 x = csdl.Variable(name = 'x', value=1.0)
 y = csdl.Variable(name = 'y', value=1.0)
 
-objective = x**2 + y**2
+objective = x**4 + y**4
 constraint_1 = x + y
 constraint_2 = x - y
 objective.add_name('objective')
