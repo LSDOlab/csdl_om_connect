@@ -26,7 +26,8 @@ dependencies = [
     "csdl_alpha @ git+https://github.com/LSDOlab/csdl_alpha.git",
     "modopt @ git+https://github.com/LSDOlab/modopt.git",
     "openmdao",
-    "jax"
+    "jax", 
+    "jaxlib" # to force installation for macos-intel
 ]
 classifiers=[
     'Development Status :: 4 - Beta',
